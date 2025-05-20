@@ -12,8 +12,8 @@ CORE=1                              # Cores required (1)
 ORDP="sbatch --mem=$MEMO --nodes=1 --ntasks=1 --cpus-per-task=$CORE --time=$TIME --partition=biodatascience.p"
 
 # Create directory for log files
-LOGS="logs/classification"
-OUT_DIR="results/classification"
+LOGS="logs"
+OUT_DIR="results"
 
 mkdir -p $LOGS
 mkdir -p $OUT_DIR
@@ -23,7 +23,7 @@ incomp=0
 
 for SEED in $SEED_LIST; do
     JOBN="classification_seed$SEED"
-    OUT_FILE="$OUT_DIR/classification_results_seed$SEED.txt"
+    OUT_FILE="$OUT_DIR/seed$SEED.txt"
     COMPLETE=0
     
     if [[ -f $OUT_FILE ]]; then

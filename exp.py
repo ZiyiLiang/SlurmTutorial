@@ -46,6 +46,6 @@ for rep in range(NUM_REPETITIONS):
 
 # Store results
 df = pd.DataFrame(all_results)
-output_file = f"classification_results_seed{seed}.txt"
+output_file = f"results/seed{seed}.txt"
 df.to_csv(output_file, index=False, sep='\t')
 print(f"Results saved to {output_file}")
